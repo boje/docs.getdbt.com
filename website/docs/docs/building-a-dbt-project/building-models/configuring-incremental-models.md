@@ -68,6 +68,7 @@ from raw_app_data.events
 :::tip Optimizing your incremental model
 
 For more complex incremental models that make use of Common Table Expressions (CTEs), you should consider the impact of the position of the `is_incremental()` macro on query performance. In some warehouses, filtering your records early can vastly improve the run time of your query!
+Example above only include bigger then last `event_time`. If the timestamp is in yyyy-mm-dd and that will be loaded more then one time per day this could potential exclude to many rows.
 
 :::
 
